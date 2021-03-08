@@ -14,4 +14,4 @@ This project a revision of [BankHeist](https://github.com/jasontsemf/BankHeist),
 
 [Download here](https://github.com/jasontsemf/BankHeist/releases/tag/v0.0-alpha)
 
-To control the AxiDraw, a native app that hosts a local server that receives requests from the browser is needed.
+To control the AxiDraw, a native app that hosts a local server and receives requests from the browser is needed.
