@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+  <title>💸 BankHeist Serial</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="./bower_components/bulma/css/bulma.min.css" />
+  <script defer src="render.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="section">
+      <h1 class="title">💸 BankHeist Serial</h1>
+      <div class="field">
+        <label class="label">Ports</label>
+        <p class="control">
+          <select name="select" id="select" class="select">
+            <option value="" selected disabled hidden>Press Scan for Ports</option>
+          </select>
+        </p>
+      </div>
+      <div class="field has-addons">
+        <p class="control">
+          <button id="scan" class="button is-warning">Scan</button>
+        </p>
+        <p class="control">
+          <button id="connect" class="button is-link">Connect</button>
+        </p>
+      </div>
+      <div id="noti" class="notification">
+        <div id="msg">Awaiting to Connect</div>
+        <div id="ins">Make API calls to http://localhost:8080 to send serial</div>
+      </div>
+      <div class="field">
+        <label class="label">Serial Command</label>
+        <p class="control">
+          <textarea name="command" id="command" class="textarea" cols="70" rows="4"></textarea>
+        </p>
+      </div>
+      <div class="field">
+        <button id="send" class="button is-link is-fullwidth">Send Serial</button>
+      </div>
+      <div class="field has-addons">
+        <p class="control">
+          <button id="pen up" class="button">Pen Up</button>
+        </p>
+        <p class="control">
+          <button id="pen down" class="button">Pen Down</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

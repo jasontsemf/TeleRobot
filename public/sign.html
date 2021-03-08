@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/socket.js"></script>
+    <script src="/js/p5.min.js"></script>
+    <script defer language="javascript" type="text/javascript" src="js/send.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id ="canvascontainer"></div>
+    <p>start a room by typing in room name and pw</p>
+    <p>wait for the other side to be online</p>
+    <p>once online, press, start button</p>
+    <p>p5 sketch here</p>
+    <p>for every point of the stroke is detected, send xy values to the other side</p>
+    <p>get rid of the stuff below</p>
+    <p></p>
+    Hi please input your x and y values and press move
+    <br>
+    <input type="text" id="x">
+    <input type="text" id="y">
+    <br>
+    <button id="btn">move it</button>
+    <script>
+        let button = document.querySelector("#btn");
+        let x;
+        let y;
+        button.onclick = async () => {
+            x = document.querySelector("#x").value;
+            y = document.querySelector("#y").value;
+            console.log(x,y);
+            let url = `move/${x},${y}`;
+            let response = fetch(url);
+        }
+        // im creating a branch called edit
+    </script>
+</body>
+
+</html>

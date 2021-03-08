@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="bower_components/crypto-js/crypto-js.js"></script>
+    <!-- <script src="bower_components/jquery/dist/jquery.js"></script> -->
+    <script src="/js/socket.js"></script>
+    <script src="/js/p5.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <script defer language="javascript" type="text/javascript" src="js/signer.js"></script>
+    <script defer language="javascript" type="text/javascript" src="js/sign.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Signer</title>
+</head>
+
+<body class="has-background-white-bis">
+    <section class="hero is-info is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    🤖 TeleRobot
+                </h1>
+                <h2 class="subtitle">
+                    Remote Drawing
+                </h2>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div id="signerlogin">
+                <div class="columns">
+                    <div class="column is-half">
+                        <h1 class="title">Join a room</h1>
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <label class="label">Name</label>
+                                    <p class="control has-icons-left">
+                                        <input id="fullname" class="input" type="text"
+                                            placeholder="Enter your name">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-user"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- <div class="column">
+                                <div class="field">
+                                    <label class="label">Company Email</label>
+                                    <p class="control has-icons-left">
+                                        <input id="email" class="input" type="text"
+                                            placeholder="Enter your company email">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-envelope"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div> -->
+
+                        </div>
+                        <div class="columns">
+                            <div class="column">
+                                <div class="field">
+                                    <label class="label">Room Name</label>
+                                    <p class="control has-icons-left">
+                                        <input id="roomname" class="input" type="text" placeholder="Enter room name">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-house-user"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="field">
+                                    <label class="label">Room Password</label>
+                                    <p class="control has-icons-left">
+                                        <input id="pw" class="input" type="password" placeholder="Enter room password">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <p id="msg" class="help">Login in with your the details given by your host</p>
+                        </div>
+                        <div class="field">
+                            <p class="control">
+                                <button id="joinroom" class="button">Join Room</button>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column is-half">
+                        <div id="sign" style="display: none;">
+                            <p id="waiting_message" class="notification is-warning">
+                                Waiting for permission
+                            </p>
+                            <div id="signingarea" style="display: none">
+                                <div class="columns">
+                                    <div class="column">
+                                        <div id="canvascontainer" style="border: solid black 1px"></div>
+                                    </div>
+                                </div>
+                                <div class="columns">
+                                    <div class="column">
+                                        <div class="field">
+                                            <button id="clear" class="button is-danger is-outlined">Clear</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <p>receiver is ready, start signing</p> -->
+                            <!-- <p>for every point of the stroke is detected, send xy values to the other side</p>     -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <input type="text" id="fullname" placeholder="enter your legal name">
+                <input type="email" id="email" placeholder="enter your email"><br>
+                <input type="text" id="roomname" placeholder="enter room name">
+                <input type="password" id="pw" placeholder="password"><br>
+                <br> -->
+
+                <!-- <button id="test">test</button> -->
+            </div>
+
+            <!-- <p class="subtitle">
+                My first website with <strong>Bulma</strong>!
+            </p> -->
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "public",
+  "homepage": "https://github.com/jasontsemf/BankHeist",
+  "authors": [
+    "Jason <jasontsemf@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "crypto-js": "^4.0.0"
+  }
+}

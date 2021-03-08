@@ -1,0 +1,50 @@
+html{
+    touch-action: pan-x pan-y;
+}
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    display: grid;
+    height: 98vh;
+    grid-template-rows: auto 1fr auto;
+
+}
+
+header {
+    /* background: lightpink; */
+    padding: 2rem;
+}
+
+main {
+    display: flex;
+}
+
+.left {
+    padding: 5px;
+    width: 50vw;
+    height: 100%;
+    /* margin-top: 25%; */
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+}
+
+.right {
+    padding: 5px;
+    width: 50vw;
+    height: 100%;
+    /* margin-top: 25%; */
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+}
+
+footer {
+    /* background: wheat; */
+    padding: 2rem;
+    text-align: center;
+}
