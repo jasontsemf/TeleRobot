@@ -6,7 +6,7 @@ var xoutput = [];
 var yarray = [];
 var youtput = [];
 var seconds = [];
-var factor = 10;
+var factor = 20;
 // var factor = 10;
 var start = true;
 
