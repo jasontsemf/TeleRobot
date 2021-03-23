@@ -7,6 +7,7 @@ var yarray = [];
 var youtput = [];
 var seconds = [];
 var factor = 10;
+// var factor = 10;
 var start = true;
 
 var drawing = [];
