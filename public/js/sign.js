@@ -27,6 +27,7 @@ function setup() {
 }
 
 function mouseDragged() {
+  // console.log("mouse dragged");
   if (millis() !== prem) {
     diff = millis() - prem;
     // console.log(diff);
@@ -48,6 +49,7 @@ function mouseDragged() {
 }
 
 function startPath() {
+  // console.log("mouse down");
   isDrawing = true;
   currentPath = [];
   drawing.push(currentPath);
@@ -56,7 +58,8 @@ function startPath() {
     y: mouseY
   }
   socket.emit('mousedown', data);
-
+  // console.log(data.x, data.y);
+  // socket.emit('mouse', data)
 }
 
 function endPath() {
@@ -66,6 +69,7 @@ function endPath() {
 
 function draw() {
   background(255);
+  border();
 
   if (isDrawing) {
     var point = {
@@ -88,45 +92,45 @@ function draw() {
   }
 }
 
-function saveDrawing() {
-  var ref = database.ref('drawings');
-  var data = {
-    name: 'Dan',
-    drawing: drawing
-  };
-  var result = ref.push(data, dataSent);
-  console.log(result.key);
+// function saveDrawing() {
+//   var ref = database.ref('drawings');
+//   var data = {
+//     name: 'Dan',
+//     drawing: drawing
+//   };
+//   var result = ref.push(data, dataSent);
+//   console.log(result.key);
 
-  function dataSent(err, status) {
-    console.log(status);
-  }
-}
+//   function dataSent(err, status) {
+//     console.log(status);
+//   }
+// }
 
-function gotData(data) {
-  // clear the listing
-  var elts = selectAll('.listing');
-  for (var i = 0; i < elts.length; i++) {
-    elts[i].remove();
-  }
+// function gotData(data) {
+//   // clear the listing
+//   var elts = selectAll('.listing');
+//   for (var i = 0; i < elts.length; i++) {
+//     elts[i].remove();
+//   }
 
-  var drawings = data.val();
-  var keys = Object.keys(drawings);
-  for (var i = 0; i < keys.length; i++) {
-    var key = keys[i];
-    //console.log(key);
-    var li = createElement('li', '');
-    li.class('listing');
-    var ahref = createA('#', key);
-    ahref.mousePressed(showDrawing);
-    ahref.parent(li);
+//   var drawings = data.val();
+//   var keys = Object.keys(drawings);
+//   for (var i = 0; i < keys.length; i++) {
+//     var key = keys[i];
+//     //console.log(key);
+//     var li = createElement('li', '');
+//     li.class('listing');
+//     var ahref = createA('#', key);
+//     ahref.mousePressed(showDrawing);
+//     ahref.parent(li);
 
-    var perma = createA('?id=' + key, 'permalink');
-    perma.parent(li);
-    perma.style('padding', '4px');
+//     var perma = createA('?id=' + key, 'permalink');
+//     perma.parent(li);
+//     perma.style('padding', '4px');
 
-    li.parent('drawinglist');
-  }
-}
+//     li.parent('drawinglist');
+//   }
+// }
 
 function errData(err) {
   console.log(err);
@@ -156,3 +160,7 @@ document.querySelector("#clear").onclick = () => {
   drawing = [];
   currentPath = [];
 };
+
+function border(){
+  rect(0, 0,width, height);
+}
